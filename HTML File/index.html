@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FoodData Central Visualization</title>
+        <style type="text/css">
+            html, body {
+                font: 16pt arial;
+            }
+    
+            h3 {
+                margin-bottom: 2px;
+                margin-top: 2px;
+            }
+            #list{
+                width: 47vw;
+                height: 80vh;
+                font-size: 1.25em;
+                float:left;
+            }
+            #viz {
+                /* width: 900px; */
+                width:47vw;
+                height: 75vh;
+                border: 1px solid lightgray;
+                font: 22pt arial;
+                margin-bottom: 10px;
+                float:left;
+            }
+            #visual {
+                float:right;
+                height: 5vh;
+                width: 47vw;
+            }
+            button, input {
+                padding:10px; 
+                margin-left: 5px;
+                margin-right:5px;   
+            }
+            input{
+                width:200px;
+            }
+        </style>
+        <!-- <script src="https://rawgit.com/neo4j-contrib/neovis.js/master/dist/neovis.js"></script> -->
+        <script src="dist/neovis.js"></script>
+        <!-- <script src="src/neovis.js"></script> -->
+        <script src="neo4j-web.min.js"></script>
+        <script src="script.js"></script>
+        
+    </head>
+    <body onload="draw()">
+        <h2 id="ingredient">GARLIC</h2>
+        <div id="list"></div>
+        <div id="visuals">
+            <div id="viz"></div>
+            <button onclick="toggleFunc()">Toggle Community Color</button>
+            <button onclick="indexChange(-1)">  <   </button>
+            <button onclick="indexChange(1)">   >   </button>
+            <input id="inputText" onkeydown="search(this)">
+        </div>
+    </body>    
+</html>
